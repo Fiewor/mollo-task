@@ -11,7 +11,6 @@ const LandingContainer = styled.div`
   padding: 0 1rem;
   @media screen and (min-width: 768px) {
     padding: 0 2rem;
-    width: 100%;
   }
 `;
 
@@ -21,31 +20,40 @@ const Container = styled.div`
   justify-content: space-between;
   padding: 1rem 0;
   margin: 1rem 0;
+  width: 90vw;
   @media screen and (min-width: 768px) {
     width: 100%;
   }
 `;
 
 const LittleText = styled.p`
+  margin: 0;
   background: #f5ebff;
   border-radius: 20px;
   text-align: center;
   padding: 0.3rem 0.5rem;
   min-width: 20%;
-  max-width: 25%;
+  max-width: 60%;
   font-size: 0.8rem;
   @media screen and (min-width: 768px) {
-    max-width: 40%;
+    max-width: 25%;
   }
 `;
 
 const TextContainer = styled.div`
   width: 90vw;
+  h1,
+  p {
+    padding: 1rem 0;
+  }
+  ul {
+    padding: 0 1rem;
+  }
   @media screen and (min-width: 768px) {
     display: flex;
     flex-direction: column;
     color: #3c1d59;
-    max-width: 40vw;
+    max-width: 45vw;
   }
 `;
 
@@ -53,6 +61,9 @@ const ImageContainer = styled.div`
   display: none;
   @media screen and (min-width: 768px) {
     display: inline-block;
+    img {
+      width: 95%;
+    }
   }
 `;
 
@@ -61,8 +72,11 @@ const SocialContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
   gap: 1rem;
-  width: 60%;
+  width: 100%;
   padding: 1rem 0;
+  @media screen and (min-width: 768px) {
+    width: 60%;
+  }
 `;
 
 const BottomContainer = styled.div`
@@ -75,15 +89,18 @@ const BottomContainer = styled.div`
   background: #3c1d59;
   color: #fff;
   border-radius: 10px;
-  ${"" /* height: 20vw; */}
 `;
 
 const BottomTextContainer = styled.div`
   display: flex;
   flex-direction: column;
   color: #fff;
-  max-width: 40vw;
-  padding-left: 3rem;
+  width: 100%;
+  padding: 0 1rem;
+  @media screen and (min-width: 768px) {
+    width: 70vw;
+    padding-left: 3rem;
+  }
 `;
 
 const BottomImage = styled.img`
@@ -91,6 +108,10 @@ const BottomImage = styled.img`
   right: 7rem;
   z-index: 8;
   height: 60vh;
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: inline-block;
+  }
 `;
 
 export const LandingPage = () => {
@@ -178,11 +199,11 @@ export const LandingPage = () => {
             <li>You can make as many cards as you want</li>
             <li>
               For your transactions, we offer a transparent and dependable
-              exchange rate
+              exchange rate.
             </li>
             <li>
               With our cashback loyalty scheme you will be able to pay smarter
-              and earn more
+              and earn more.
             </li>
             <li>
               Compatible with Apple Pay, Google Pay, Paypal, Netflix, Amazon,
@@ -196,8 +217,8 @@ export const LandingPage = () => {
         <BottomTextContainer>
           <h1>Register For Free</h1>
           <p>
-            Mollo is available on Google Play and the App Store.To enjoy
-            ultimate financial security
+            Mollo is available on Google Play and the App Store. To enjoy
+            ultimate financial security.
           </p>
           <SocialContainer>
             <Button

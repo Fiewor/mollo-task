@@ -5,6 +5,7 @@ import { Logo } from "./SignUp";
 import { Button } from "./Button";
 import { logo } from "../assets";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import MenuIcon from "@mui/icons-material/Menu";
 
 const NavBar = styled.nav`
   display: flex;
@@ -13,21 +14,37 @@ const NavBar = styled.nav`
   align-items: center;
   color: #3c1d59;
   padding: 0.5rem 0 3rem;
-  width: 100%;
+  width: 50vw;
   a {
     border-radius: 4px;
     :hover {
       cursor: pointer;
     }
   }
+  @media screen and (min-width: 768px) {
+    width: 100%;
+  }
+`;
+
+const MenuIconContainer = styled.div`
+  display: inline-block;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
 `;
 
 const NavGroup = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  min-width: 20%;
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 20%;
+  }
 `;
 
 const FeatureGroup = styled.div`
@@ -50,7 +67,9 @@ export const Nav = () => {
           style={{ paddingLeft: "0", marginBottom: "0" }}
         />
       </Link>
-
+      <MenuIconContainer>
+        <MenuIcon />
+      </MenuIconContainer>
       <NavGroup>
         <FeatureGroup>
           <Button text="Company" background="transparent" color="#3C1D59" />

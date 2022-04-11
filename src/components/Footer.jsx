@@ -21,21 +21,28 @@ const FooterContainer = styled.div`
   flex-direction: column;
   gap: 1rem;
   width: 100%;
+  padding: 3rem 0;
+  @media screen and (min-width: 768px) {
+    padding-bottom: 1rem;
+  }
 `;
 
 const FooterGroups = styled.div`
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   width: 100%;
-  margin: 2rem 0;
+  flex-direction: column;
+  gap: 1rem;
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 2rem 0;
+  }
 `;
 
 const FooterGroup = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  margin-top: 0;
+  margin: 0.8rem 0;
   padding: 0 1rem;
   p {
     font-size: 18px;
@@ -51,9 +58,19 @@ const FooterGroup = styled.div`
 const SocialGroup = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  gap: 1rem;
+  justify-content: space-around;
   color: #3c1d59;
+  @media screen and (min-width: 768px) {
+    justify-content: space-between;
+    gap: 1rem;
+  }
+`;
+
+const CopyRightText = styled.p`
+  padding: 0.4rem 1rem;
+  @media screen and (min-width: 768px) {
+    padding: 0;
+  }
 `;
 
 export const Footer = () => {
@@ -83,7 +100,9 @@ export const Footer = () => {
             <InstagramIcon />
           </SocialGroup>
         </FooterGroups>
-        <p>Copyright © 2021 Mollo Technology. All Rights Reserved.</p>
+        <CopyRightText>
+          Copyright © 2021 Mollo Technology. All Rights Reserved.
+        </CopyRightText>
       </FooterContainer>
     </Foot>
   );
