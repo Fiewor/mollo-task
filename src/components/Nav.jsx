@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Logo } from "./SignUp";
@@ -29,8 +29,9 @@ const NavBar = styled.nav`
 const MenuIconContainer = styled.div`
   display: inline-block;
   position: absolute;
-  top: 1rem;
+  top: 1.2rem;
   right: 1rem;
+  z-index: 3;
   @media screen and (min-width: 768px) {
     display: none;
   }
@@ -57,7 +58,41 @@ const FeatureGroup = styled.div`
   }
 `;
 
+const VerticalMenu = styled.div`
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+  transition: ease-in 0.3s;
+`;
+
+const MenuLink = styled.div`
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.2rem;
+  a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #fff;
+    :hover {
+      color: #3c1d59;
+    }
+  }
+`;
+
 export const Nav = () => {
+  const [displayMenu, setDisplayMenu] = useState(false);
   return (
     <NavBar>
       <Link to="/" style={{ padding: "0" }}>
@@ -68,8 +103,27 @@ export const Nav = () => {
         />
       </Link>
       <MenuIconContainer>
-        <MenuIcon />
+        <MenuIcon onClick={() => setDisplayMenu(!displayMenu)} />
       </MenuIconContainer>
+      {displayMenu && (
+        <VerticalMenu>
+          <MenuLink>
+            <Link to="/SignUp">Sign Up</Link>
+          </MenuLink>
+          <MenuLink>
+            <Link to="/SignIn">Log In</Link>
+          </MenuLink>
+          <MenuLink>
+            <Link to="/">Company</Link>
+          </MenuLink>
+          <MenuLink>
+            <Link to="/">Features</Link>
+          </MenuLink>
+          <MenuLink>
+            <Link to="/">Help</Link>
+          </MenuLink>
+        </VerticalMenu>
+      )}
       <NavGroup>
         <FeatureGroup>
           <Button text="Company" background="transparent" color="#3C1D59" />

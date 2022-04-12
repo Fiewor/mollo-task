@@ -31,11 +31,12 @@ const LittleText = styled.p`
   background: #f5ebff;
   border-radius: 20px;
   text-align: center;
-  padding: 0.3rem 0.5rem;
+  padding: 0;
   min-width: 20%;
-  max-width: 60%;
+  max-width: 50%;
   font-size: 0.8rem;
   @media screen and (min-width: 768px) {
+    padding: 0.3rem 0.5rem;
     max-width: 25%;
   }
 `;
@@ -44,7 +45,7 @@ const TextContainer = styled.div`
   width: 90vw;
   h1,
   p {
-    padding: 1rem 0;
+    padding: 0.5rem 0;
   }
   ul {
     padding: 0 1rem;

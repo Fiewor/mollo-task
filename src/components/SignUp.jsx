@@ -22,6 +22,14 @@ export const FormSection = styled.div`
   gap: 3rem;
   max-width: 95vw;
   padding: 0 2rem;
+  img {
+    display: none;
+  }
+  @media screen and (min-width: 768px) {
+    img {
+      display: inline-block;
+    }
+  }
 `;
 
 export const HeaderText = styled.h1`
@@ -34,9 +42,12 @@ export const Text = styled.p`
   font-family: "Abhaya Libre", serif;
   color: #433d4a;
   font-size: 1rem;
+  padding: 1rem 0;
 `;
 
-export const FormContainer = styled.div``;
+export const FormContainer = styled.div`
+  margin-bottom: 2rem;
+`;
 
 export const SignUpForm = styled.form`
   display: flex;
